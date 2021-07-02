@@ -14,7 +14,7 @@ We provide type declarations for almost all methods and parameters available in 
 
 Install the library with either npm or yarn.
 
-```bash
+```sh
 # NPM
 npm i --save @qatapult/client
 # Yarn
@@ -40,14 +40,14 @@ The client was created with asynchronicity in mind so you can use async/await wi
 You can queue a quiz generation request with the client.
 
 ```javascript
-const quizId = await quizzes.createQuiz(text, numQuestions);
+const quizId = await quizzes.generateFromText(text);
 ```
 
 The `quizId` generated here is an identifier for your quiz. But the quiz **does not exist yet**, you will receive a request on your webhook URL to handle the completion of the quiz generation.
 
 ### Retreiving Quizzes
 
-If you need the original quiz again after you already handled the completion request, you can retrieve it with the `quizId`.
+If you need the original quiz again after you already handled the completion request (or if you failed to), you can retrieve it with the `quizId`.
 
 ```javascript
 const quiz = await quizzes.getQuiz(quizId);

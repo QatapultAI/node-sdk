@@ -1,14 +1,16 @@
 {
   "name": "@qatapult/client",
   "version": "0.0.1",
-  "description": "Helper library for interacting with the Question Generation API",
+  "description": "Helper library for interacting with the Qatapult API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
     "/dist"
   ],
   "scripts": {
-    "test": "mocha"
+    "build": "tsc -p .",
+    "test": "mocha",
+    "publish": "yarn build && npm publish --access public"
   },
   "keywords": [],
   "author": "Abhishek Kasireddy <abhishek@voxlogic.io>",
@@ -28,5 +30,6 @@
   },
   "repository": {
     "url": "https://github.com/QatapultAI/node-sdk"
-  }
+  },
+  "gitHead": "629ab31484de94820f7b837f9875725298c8ca39"
 }
