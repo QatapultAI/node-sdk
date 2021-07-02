@@ -16,17 +16,17 @@ Install the library with either npm or yarn.
 
 ```bash
 # NPM
-npm i --save @vox-logic/qatapult
+npm i --save @qatapult/client
 # Yarn
-yarn add @vox-logic/qatapult
+yarn add @qatapult/client
 ```
 
 Import it and initialize the client with your token.
 
 ```javascript
-const QuizClient = require("@vox-logic/qatapult").QuizClient;
+const QuizClient = require("@qatapult/client").QuizClient;
 // Or if you are using ES6 import/exports
-import { QuizClient } from "@vox-logic/qatapult";
+import { QuizClient } from "@qatapult/client";
 
 const quizzes = new QuizClient("API_TOKEN");
 ```

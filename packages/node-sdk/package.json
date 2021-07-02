@@ -1,5 +1,5 @@
 {
-  "name": "@vox-logic/qatapult",
+  "name": "@qatapult/client",
   "version": "0.0.1",
   "description": "Helper library for interacting with the Question Generation API",
   "main": "dist/index.js",

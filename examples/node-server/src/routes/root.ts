@@ -1,5 +1,5 @@
 import express from "express";
-import { QuizClient } from "@vox-logic/qatapult";
+import { QuizClient } from "@qatapult/client";
 
 const router = express.Router();
 const quizzes = new QuizClient(
