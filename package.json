@@ -2,7 +2,7 @@
   "name": "root",
   "private": false,
   "scripts": {
-    "publish": "lerna publish"
+    "publish": "lerna run build && lerna publish"
   },
   "devDependencies": {
     "lerna": "^4.0.0"
