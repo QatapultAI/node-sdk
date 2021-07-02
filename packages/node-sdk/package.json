@@ -9,8 +9,7 @@
   ],
   "scripts": {
     "build": "tsc -p .",
-    "test": "mocha",
-    "publish": "yarn build && npm publish --access public"
+    "test": "mocha"
   },
   "keywords": [],
   "author": "Abhishek Kasireddy <abhishek@voxlogic.io>",
@@ -31,5 +30,5 @@
   "repository": {
     "url": "https://github.com/QatapultAI/node-sdk"
   },
-  "gitHead": "33933d1c3374e83d317e7025558bb0e3f7f62a2b"
+  "gitHead": "d6aa4570afb0abe8516a9051966079090e81cd59"
 }
