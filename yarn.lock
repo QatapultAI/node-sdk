@@ -2061,12 +2061,6 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@qatapult/common@workspace:*, @qatapult/common@workspace:packages/@qatapult/common":
-  version: 0.0.0-use.local
-  resolution: "@qatapult/common@workspace:packages/@qatapult/common"
-  languageName: unknown
-  linkType: soft
-
 "@rollup/plugin-node-resolve@npm:^7.1.1":
   version: 7.1.3
   resolution: "@rollup/plugin-node-resolve@npm:7.1.3"
@@ -12837,7 +12831,6 @@ fsevents@^1.2.7:
   resolution: "qatapult-backend-example@workspace:examples/node-server"
   dependencies:
     "@qatapult/client": "workspace:*"
-    "@qatapult/common": "workspace:*"
     "@tsconfig/recommended": ^1.0.1
     "@types/cors": ^2.8.10
     "@types/express": ^4.17.8
@@ -12918,6 +12911,7 @@ fsevents@^1.2.7:
     "@types/react": ^17.0.0
     "@types/react-dom": ^17.0.0
     axios: ^0.21.1
+    eslint-config-react-app: ^6.0.0
     react: ^17.0.2
     react-dom: ^17.0.2
     react-scripts: 4.0.3
