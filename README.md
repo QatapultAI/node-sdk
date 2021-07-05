@@ -16,7 +16,7 @@ yarn add @qatapult/client
 Use the API token from your account page to initialise the client.
 
 ```javascript
-const { QuizClient } = require("@qatapult/client").QuizClient;
+const QuizClient = require("@qatapult/client").QuizClient;
 // Or, with ES6 imports...
 import { QuizClient } from "@qatapult/client";
 
@@ -63,3 +63,17 @@ If you have a front end client that is capable of receiving websocket events, yo
 const articleLink = `https://en.wikipedia.org/wiki/Alan_Turing`;
 const reqId = quizzes.generateFromArticle(articleLink, socketId);
 ```
+
+## Contributing
+
+The repo is managed using yarn workspaces. You need a version of yarn 1.22.5 or above.
+
+If you're developing with VS Code, you need to set your TypeScript version to use the one provided in `.yarn/sdks/typescript`
+
+To generate those SDKs agains, run `yarn dlx @yarnpkg/pnpify --sdk vscode`
+
+To install the packages for the first time, run `yarn`
+
+You should have TypeScript intellisense and have linked dependencies in all packages within the repo.
+
+**Note** To manually set version to yarn 2 in the repo, run `yarn set version berry`

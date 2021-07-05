@@ -7,7 +7,7 @@ const quizzes = new QuizClient(
   "c33380e02dfe259a9310a3861705b6481950b285e2f41b6b87b3968d6c40F361"
 );
 
-router.post("/generate-quiz", async (req, res) => {
+router.post("/generate-quiz", async (req: any, res: any) => {
   console.log({ body: req.body });
   const requestId = await quizzes.generateFromArticle(
     req.body.url,

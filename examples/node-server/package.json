@@ -1,7 +1,7 @@
 {
-  "name": "ts-node-boiler",
+  "name": "qatapult-backend-example",
   "version": "1.0.0",
-  "description": "A template for bootstrapping Node projects using TypeScript",
+  "description": "An example backend server that uses Qatapult to create quizzes.",
   "main": "src/index.ts",
   "scripts": {
     "start": "node dist/index.js",
@@ -23,6 +23,8 @@
     "typescript": "^4.0.3"
   },
   "dependencies": {
+    "@qatapult/client": "workspace:*",
+    "@qatapult/common": "workspace:*",
     "axios": "^0.20.0",
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",

@@ -79,3 +79,7 @@ export class QuizClient {
     return r.data;
   }
 }
+
+export function hello() {
+  return "hello";
+}

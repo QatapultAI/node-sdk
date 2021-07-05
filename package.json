@@ -1,10 +1,14 @@
 {
   "name": "root",
-  "private": false,
-  "scripts": {
-    "publish": "lerna run build && lerna publish"
-  },
+  "private": true,
+  "scripts": {},
+  "workspaces": [
+    "packages/@qatapult/*",
+    "examples/*"
+  ],
   "devDependencies": {
-    "lerna": "^4.0.0"
+    "eslint": "^7.30.0",
+    "prettier": "^2.3.2",
+    "typescript": "^4.3.5"
   }
 }
