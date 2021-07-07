@@ -5130,6 +5130,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/serve-static", "npm:1.13.9"]
           ],
           "linkType": "HARD",
+        }],
+        ["npm:4.17.13", {
+          "packageLocation": "./.yarn/cache/@types-express-npm-4.17.13-0e12fe9c24-9f17da703d.zip/node_modules/@types/express/",
+          "packageDependencies": [
+            ["@types/express", "npm:4.17.13"],
+            ["@types/body-parser", "npm:1.19.0"],
+            ["@types/express-serve-static-core", "npm:4.17.22"],
+            ["@types/qs", "npm:6.9.6"],
+            ["@types/serve-static", "npm:1.13.9"]
+          ],
+          "linkType": "HARD",
         }]
       ]],
       ["@types/express-serve-static-core", [
@@ -5275,6 +5286,16 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/morgan", "npm:1.9.2"],
             ["@types/node", "npm:16.0.0"]
+          ],
+          "linkType": "HARD",
+        }]
+      ]],
+      ["@types/multer", [
+        ["npm:1.4.7", {
+          "packageLocation": "./.yarn/cache/@types-multer-npm-1.4.7-df3819be8e-f20bc141e3.zip/node_modules/@types/multer/",
+          "packageDependencies": [
+            ["@types/multer", "npm:1.4.7"],
+            ["@types/express", "npm:4.17.13"]
           ],
           "linkType": "HARD",
         }]
@@ -17280,6 +17301,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/cors", "npm:2.8.10"],
             ["@types/express", "npm:4.17.12"],
             ["@types/morgan", "npm:1.9.2"],
+            ["@types/multer", "npm:1.4.7"],
             ["@types/node", "npm:14.17.4"],
             ["axios", "npm:0.20.0"],
             ["cors", "npm:2.8.5"],
