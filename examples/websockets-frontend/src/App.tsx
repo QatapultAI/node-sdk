@@ -48,7 +48,7 @@ class App extends React.Component<Props, State> {
   };
 
   async generateQuiz() {
-    const r = await axios.post(`${MOCK_SERVER}/generate-quiz-yt`, {
+    const r = await axios.post(`${MOCK_SERVER}/generate-quiz`, {
       url: this.state.articleUrl,
       socketId: this.socket.id,
     });

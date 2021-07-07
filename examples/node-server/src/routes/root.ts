@@ -1,7 +1,7 @@
 import express from "express";
 import multer from "multer";
 import { QuizClient } from "@qatapult/client";
-
+import fs from "fs";
 const upload = multer({ dest: "/tmp/" });
 const router = express.Router();
 const quizzes = new QuizClient(process.env.QATAPULT_KEY!);
@@ -41,8 +41,12 @@ router.post(
   upload.single("file"),
   async (req: any, res: any) => {
     console.log({ file: req.file });
+    console.log({ original: req.file?.originalname });
+    console.log({ socketId: req.body.socketId });
+    const filePath = `${req.file?.path}${req.file?.originalname}`;
+    fs.renameSync(req.file?.path!, filePath);
     const requestId = await quizzes.generateFromFile(
-      req.file.path,
+      filePath,
       req.body.socketId
     );
 
