@@ -3,7 +3,8 @@ import React from "react";
 import socketClient, { Socket } from "socket.io-client";
 
 // const LEAP = "http://leap-env.eba-cxnbbxmn.us-east-1.elasticbeanstalk.com";
-const LEAP = "http://api.qatapult.ai";
+// const LEAP = "http://localhost:8001";
+const LEAP = "https://api.qatapult.ai";
 const MOCK_SERVER = "http://localhost:8002";
 
 type Props = {};
@@ -30,8 +31,24 @@ class App extends React.Component<Props, State> {
     });
   }
 
+  handleFile = async (e: any) => {
+    let file = new FormData();
+    console.log(e.target.files[0]);
+    file.append("file", e.target.files[0]);
+    file.append("socketId", this.socket.id);
+    const r = await axios.post(`${MOCK_SERVER}/generate-quiz-file`, file, {
+      headers: {
+        "Content-Type": "multipart/form-data",
+      },
+    });
+
+    if (r.data.ok) {
+      alert("File uploaded");
+    }
+  };
+
   async generateQuiz() {
-    const r = await axios.post(`${MOCK_SERVER}/generate-quiz`, {
+    const r = await axios.post(`${MOCK_SERVER}/generate-quiz-yt`, {
       url: this.state.articleUrl,
       socketId: this.socket.id,
     });
@@ -52,6 +69,7 @@ class App extends React.Component<Props, State> {
             this.setState((state) => ({ ...state, articleUrl: e.target.value }))
           }
         />
+        <input type="file" onChange={(e) => this.handleFile(e)} />
         <button onClick={this.generateQuiz}>Create a quiz</button>
         <pre>{JSON.stringify(this.state.quiz!, null, 2)}</pre>
       </div>
