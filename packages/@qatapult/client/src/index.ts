@@ -1,5 +1,7 @@
 import Axios, { AxiosInstance } from "axios";
 import { hosts } from "./utils/data";
+import FormData from "form-data";
+
 import {
   ArticleGenerationRequest,
   TextGenerationRequest,
