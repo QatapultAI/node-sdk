@@ -1,3 +1,6 @@
+import dotenv from "dotenv";
+dotenv.config();
+
 import Axios, { AxiosInstance } from "axios";
 import { hosts } from "./utils/data";
 import {
@@ -5,17 +8,30 @@ import {
   TextGenerationRequest,
   YouTubeGenerationRequest,
 } from "./utils/types";
+import FormData from "form-data";
 
 export class QuizClient {
   // Private axios instance for internal requests
-  private axios: AxiosInstance;
+  private axios!: AxiosInstance;
 
   /**
-   * @param  {string} token Your API token that you can retrieve from your account page (https://qatapult.ai/account/keys)
+   * @param  {string} apiKey Your API token that you can retrieve from your account page (https://qatapult.ai/account/keys)
    */
-  constructor(token: string) {
-    this.axios = Axios;
-    this.axios.defaults.headers.common["Authorization"] = `Bearer ${token}`;
+  constructor(apiKey: string) {
+    // Validate token to make sure requests are valid before hand
+    this.validateKey(apiKey);
+  }
+
+  async validateKey(key: string) {
+    const r = await Axios.post(`${hosts.leap}/api/users/validate-key`, { key });
+    const ok = r.status === 200 && r.data.ok;
+    if (ok) {
+      this.axios = Axios;
+      this.axios.defaults.headers.common["Authorization"] = `Bearer ${key}`;
+    } else {
+      console.log(`Invalid Qatapult API key`);
+      process.exit(1);
+    }
   }
 
   async generateFromText(text: string, socketId?: string): Promise<string> {
@@ -51,6 +67,7 @@ export class QuizClient {
 
     return r.data.requestId;
   }
+
   /**
    * @param  {string} vid A valid YouTube video id, length must be 11 characters
    * @returns Promise resolving string

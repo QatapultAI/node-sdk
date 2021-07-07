@@ -4,10 +4,7 @@ const upload = multer();
 import { QuizClient } from "@qatapult/client";
 
 const router = express.Router();
-const quizzes = new QuizClient(
-  // This key is fake
-  "438254d55f006536a8c48080c6419baa682c1d01e49e77707d787c589302fa9e"
-);
+const quizzes = new QuizClient(process.env.QATAPULT_KEY!);
 
 router.post("/generate-quiz", async (req: any, res: any) => {
   console.log({ body: req.body });
