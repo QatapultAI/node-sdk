@@ -1,6 +1,8 @@
 import dotenv from "dotenv";
 dotenv.config();
 
+import fs from "fs";
+import { FileHandle } from "fs/promises";
 import Axios, { AxiosInstance } from "axios";
 import { hosts } from "./utils/data";
 import {
@@ -54,15 +56,16 @@ export class QuizClient {
     return r.data.requestId;
   }
 
-  async generateFromFile(file: File, socketId?: string): Promise<string> {
+  async generateFromFile(filePath: string, socketId?: string): Promise<string> {
     const form = new FormData();
-    form.append("file", file);
+    if (!filePath) throw new Error(`Invalid file path -> ${filePath}`);
+    form.append("file", fs.createReadStream(filePath));
     if (socketId) form.append("socketId", socketId);
 
+    console.log(filePath);
+
     const r = await this.axios.post(`${hosts.leap}/api/generate/file`, form, {
-      headers: {
-        "content-type": "multipart/form-data",
-      },
+      headers: form.getHeaders(),
     });
 
     return r.data.requestId;

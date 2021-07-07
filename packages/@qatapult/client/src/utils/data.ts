@@ -1,3 +1,3 @@
 export const hosts = {
-  leap: process.env.LEAP_HOST || "https://api.qatapult.ai",
+  leap: "https://api.qatapult.ai",
 };

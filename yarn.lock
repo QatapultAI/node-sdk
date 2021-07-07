@@ -2472,6 +2472,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/express@npm:*":
+  version: 4.17.13
+  resolution: "@types/express@npm:4.17.13"
+  dependencies:
+    "@types/body-parser": "*"
+    "@types/express-serve-static-core": ^4.17.18
+    "@types/qs": "*"
+    "@types/serve-static": "*"
+  checksum: 9f17da703df21e3f1cee2fe1864b9fcac2ab07c37382b972a194a3a484b41c1fbe4022b6cfe546f0171fd2d93b324dd3839512494f4cba639c2afa021e6dbb12
+  languageName: node
+  linkType: hard
+
 "@types/express@npm:^4.17.8":
   version: 4.17.12
   resolution: "@types/express@npm:4.17.12"
@@ -2595,6 +2607,15 @@ __metadata:
   dependencies:
     "@types/node": "*"
   checksum: ebb3b2239f1ae7f1041168121934fd1e3058c707a4986ebfa2b461d7d032ba6a9eee219c9c208d05893fde752215d2a78b54d1b5d17cd2e5bd5370e6ca5f2932
+  languageName: node
+  linkType: hard
+
+"@types/multer@npm:^1.4.7":
+  version: 1.4.7
+  resolution: "@types/multer@npm:1.4.7"
+  dependencies:
+    "@types/express": "*"
+  checksum: f20bc141e3f8fee16e8cf36a213dca7285f4af0ac5960ca8b17076f26f2dfd77d6518da3908de32482cc8d799cd8ae82af17cbe85c4f9829b70918e6420dd330
   languageName: node
   linkType: hard
 
@@ -12905,6 +12926,7 @@ fsevents@^1.2.7:
     "@types/cors": ^2.8.10
     "@types/express": ^4.17.8
     "@types/morgan": ^1.9.2
+    "@types/multer": ^1.4.7
     "@types/node": ^14.11.8
     axios: ^0.20.0
     cors: ^2.8.5
